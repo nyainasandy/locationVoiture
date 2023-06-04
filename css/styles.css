@@ -1,0 +1,78 @@
+@font-face {
+	font-family: 'Bicro';
+	src: url('../fonts/bicro.ttf') format('truetype')
+}
+
+:root {
+    --orange-color: #ff5602;
+    --night-blue-color: #153e4d;
+}
+
+.type {
+    color: var(--orange-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;    
+}
+
+.label {
+    font-size: 20px;
+    line-height: 22px;
+    overflow: hidden;
+}
+
+.type, .label {
+    font-family: Montserrat,Arial;
+    font-weight: 700;
+}
+
+.nav-item a {
+    font-family: Montserrat,Arial;
+    color: #ffffff!important;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    font-style: normal;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+.header-img {
+    background-image: url('../images/header.png');
+    background-size: cover;
+    height: 450px;
+}
+
+.header-filter {
+    background-color: var(--night-blue-color);
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none !important;
+    letter-spacing: -.4px;
+    z-index: 2;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.logo {
+    font-family: 'Bicro', sans-serif;
+    font-size: 120px;
+    font-weight: 500;
+    color: var(--orange-color);
+}
+
+.logo + div {
+    font-size: 32px;
+    font-weight: 300;
+    text-shadow: black 1px 0 10px;
+    color: white;
+}
