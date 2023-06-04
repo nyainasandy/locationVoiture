@@ -12,7 +12,7 @@
             echo "<div class='col-lg-4 fiche m-2'>";
                 
             echo "    <img src='/VenteVoiture".$voiture['photo']."' class='img-fluid' />";
-            echo "    <div class='row mt-3'>";
+            echo "    <div class='row my-3'>";
             echo "        <div class='col-lg-8'>";
             echo "            <div class='type'>Certified used 2021</div>";
             echo "            <div class='label'>".$voiture['nom']." ".$voiture['model']."</div>";
@@ -50,7 +50,7 @@
             echo "            Kilometrage";
             echo "        </div>";
             echo "        <div class='col-lg-8 ps-2'>";
-            echo "            ".$voiture['kilometrage'];
+            echo "            ".number_format($voiture['kilometrage'], 0, ',', ' ');
             echo "        </div>";
             echo "    </div>";
 
