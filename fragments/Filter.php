@@ -1,6 +1,6 @@
 <div class="container-fluid header-filter">
     <div class="container text-light p-3">
-        <div>Filtre.s</div>
+        <div class="header-label">Filtre.s</div>
 
         <div class="container px-5 my-5">
             <form id="filterForm">
