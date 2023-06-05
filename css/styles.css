@@ -132,3 +132,7 @@ ul.list-arrow > li > a:hover {
 .fiche > div:nth-child(2n + 1) {
     background-color: #f5f5f5;
 }
+
+.nav.nav-tabs > .nav-item > a {
+    color: black!important;
+}

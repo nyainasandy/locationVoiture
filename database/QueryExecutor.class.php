@@ -6,7 +6,7 @@
 
         private $database = null;
 
-        public function execute($sql) {
+        public function select($sql) {
 
             $this->connectToDatabase();
             if($this->database == null || !$this->database->isConnected()) {
@@ -17,11 +17,30 @@
             $query = new Query();
             $connection = $this->database->getConnection();
             
-            $results = $query->executeQuery($connection, $sql);
+            $results = $query->selectQuery($connection, $sql);
 
             $this->database->close();
 
             return $results;
+        }
+
+        public function insert($sql) {
+
+            $this->connectToDatabase();
+            if($this->database == null || !$this->database->isConnected()) {
+                print 'Unable to connect to database !!';
+                return null;
+            }
+
+            $query = new Query();
+            $connection = $this->database->getConnection();
+            
+            $query->insertQuery($connection, $sql);
+
+            $lastInsertId = $connection->lastInsertId();
+            $this->database->close();
+
+            return $lastInsertId;
         }
 
         private function connectToDatabase() {

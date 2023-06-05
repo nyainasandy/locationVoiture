@@ -7,7 +7,7 @@
         public function findAll() {
             $queryExecutor = new QueryExecutor();
             $sql = $this->generateQueryToCollectAllWarranties();
-            return $queryExecutor->execute($sql);
+            return $queryExecutor->select($sql);
         }
 
         private function generateQueryToCollectAllWarranties() {

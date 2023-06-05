@@ -7,7 +7,7 @@
         public function findAll() {
             $queryExecutor = new QueryExecutor();
             $sql = $this->generateQueryToCollectAllEnergies();
-            return $queryExecutor->execute($sql);
+            return $queryExecutor->select($sql);
         }
 
         private function generateQueryToCollectAllEnergies() {
