@@ -25,7 +25,7 @@
         $garantie = $_POST["garantie"];
         $energie = $_POST["energie"];
 
-        $photo = $_FILES["photo"]["name"];
+        $photo = "/images/".$_FILES["photo"]["name"];
 
         print "marque : $marque $modele<br/>";
         print "année : $annee - mise en circulation : $mise_en_circulation<br/>";
@@ -68,6 +68,8 @@
 
         $fundings = new Fundings();
         $fundings->create($last_insert_id, $id_financement, $nombre_mois, $interets, $montant_total);
+        $fundings->generateQueryToCreateNewRecord();
+        
         var_dump($_FILES);
         $tmpName = $_FILES['photo']['tmp_name'];
         $name = $_FILES['photo']['name'];
@@ -75,12 +77,11 @@
 
         $maxSize = 700000;
 
-        print "NAME FILE : $tmpName - Size : $size";
         if($size <= $maxSize) {
             move_uploaded_file($tmpName, './images/'.$name);
-            //header("location:/?new&creation_status=ok&id=$last_insert_id");
+            header("location:/?new&cs=ok");
         } else {
-            //header("location:/?new&creation_status=ko&id=$last_insert_id");
+            header("location:/?new&cs=ko&si=tb");
         }
     }
 ?>

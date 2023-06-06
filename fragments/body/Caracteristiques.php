@@ -77,13 +77,13 @@
             <label for="crit_air">Crit'air</label> 
             <div>
                 <select id="crit_air" name="crit_air" required="required" class="form-select">
-                <option value="0">0 - Véhicules 100% élecrique et hydrogène</option>
-                <option value="1">1 - Gaz et hybrides rechargeables</option>
-                <option value="2">2 - Vehicules essence Euro 4, diesel Euro 5, 6</option>
-                <option value="3">3 - Vehicules essence Euro 2, 3, diesel Euro 4</option>
-                <option value="4">4 - Vehicules diesel Euro 3</option>
-                <option value="5">5 - Vehicules diesel Euro 2</option>
-            </select>
+                    <option value="0">0 - Véhicules 100% élecrique et hydrogène</option>
+                    <option value="1">1 - Gaz et hybrides rechargeables</option>
+                    <option value="2">2 - Vehicules essence Euro 4, diesel Euro 5, 6</option>
+                    <option value="3">3 - Vehicules essence Euro 2, 3, diesel Euro 4</option>
+                    <option value="4">4 - Vehicules diesel Euro 3</option>
+                    <option value="5">5 - Vehicules diesel Euro 2</option>
+                </select>
             </div>
         </div>
 

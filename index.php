@@ -11,7 +11,7 @@
     <?php 
     require("fragments/Navigation.php");
     require("fragments/Header.php"); 
-    require("fragments/Filter.php"); 
+    // require("fragments/Filter.php"); 
     
     require("fragments/Body.php"); 
     

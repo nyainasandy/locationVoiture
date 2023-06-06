@@ -2,13 +2,13 @@
 
     <?php 
     if(isset($_GET['new'])) {
+
+        //cs=ko&si=tb -> creation status (ok, ko) - size image (tb : too big)
         echo "<h1 class='h1 pb-3 mb-5 border-bottom'>New</h1>";
         require("body/New.php");
     } else {
-        echo "<h1 class='h1 pb-3 mb-5 border-bottom'>Cars</h1>";
-        require("./Voitures.php");
+        require("Voitures.php");
     } 
     ?>
    
-    
 </div>

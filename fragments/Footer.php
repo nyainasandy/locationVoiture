@@ -26,5 +26,5 @@
 </div>
 
 <div class="container-fluid text-center bg-dark-footer">
-    &copy; 2023 Copyright : goldengarage.com
+    &copy; 2023 Copyright : goldengarage.com 
 </div>

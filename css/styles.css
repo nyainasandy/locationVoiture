@@ -49,8 +49,9 @@
 }
 
 .header-img {
-    background-image: url('../images/header.png');
+    background-image: url('../images/fond2.jpg');
     background-size: cover;
+    background-position-y: -120px;
     height: 450px;
 }
 
@@ -135,4 +136,12 @@ ul.list-arrow > li > a:hover {
 
 .nav.nav-tabs > .nav-item > a {
     color: black!important;
+}
+
+.breadcrumb-header {
+    background-color: var(--night-blue-color);
+    border-radius: 10px 10px 0px 0px;
+}
+.breadcrumb-header a, .breadcrumb-header li {
+    color: white;
 }
