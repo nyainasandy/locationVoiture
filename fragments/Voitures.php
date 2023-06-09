@@ -36,7 +36,16 @@
             <div class='col-lg-4 mt-1 p-1'>
 
                 <div class='border fiche p-2'>
-                    <img src="<?php echo $voiture['photo']; ?>" class='img-fluid' />
+
+                    <?php
+                        if(isset($voiture['photos']) && $voiture['photos'] != null) {
+                            $photos = explode(",", $voiture['photos']);
+                            echo "<img src='$photos[0]' class='apercu' />";
+                        } else {
+                            echo "<img src=\"images/No_Image_Available.jpg\" class='apercu'/>";
+                        }
+                    ?>
+                    
                     <div class='row my-3 px-2'>
                         <div class='col-lg-8'>
                             <div class='type'>Certified used 2021</div>
@@ -79,7 +88,7 @@
                     </div>
                     
                     <div class="mt-2 text-end">
-                        <button class="btn btn btn-outline-primary">voir le detail</button>
+                        <a class="btn btn btn-outline-primary" href="?view&id=<?php echo $voiture['id_voiture']; ?>">voir le detail</a>
                     </div>
 
                 </div>

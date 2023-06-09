@@ -142,6 +142,38 @@ ul.list-arrow > li > a:hover {
     background-color: var(--night-blue-color);
     border-radius: 10px 10px 0px 0px;
 }
+
 .breadcrumb-header a, .breadcrumb-header li {
     color: white;
+}
+
+.miniature {
+    width: 125px; 
+    height: 100px; 
+    object-fit: cover
+}
+
+.apercu {
+    width: 408px; 
+    height: 306px; 
+    object-fit: cover
+}
+
+#big {
+    width: 1290px; 
+    height: 800px; 
+    object-fit: cover;
+}
+
+.tabs .nav-item {
+    width: 190px;
+    padding: 40px 0px;
+    
+
+}
+
+.tabs .nav-item a:not(.active) {
+    text-align: center;
+    font-size: 14px;
+    background-color: #e7e7e7!important;
 }
