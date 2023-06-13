@@ -10,6 +10,9 @@
     } else if(isset($_GET['view']) && isset($_GET['id'])) {
         require("body/View.php");
 
+    } else if(isset($_GET['login'])) {
+        require("body/Login.php");
+        
     } else {
         require("Voitures.php");
     } 

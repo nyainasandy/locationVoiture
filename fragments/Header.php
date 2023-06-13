@@ -5,10 +5,13 @@
         <div class="d-flex align-items-start flex-column" style="height: 450px">
             <div class="m-auto">
                 <div class="logo">Golden garage</div>
-                <div>Vente d'occation, achat et réparation </div>
+                <div>
+                    Vente d'occation, achat et réparation <br/>
+                    <span class="fs-5">Lorem ipsum dolor sit amet</span>
+                </div>
             </div>
             
-            <div class="container pt-2 breadcrumb-header">
+            <!--<div class="container pt-2 breadcrumb-header">
                 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb ms-3">
                         <li class="breadcrumb-item">
@@ -22,7 +25,7 @@
                         ?>
                     </ol>
                 </nav>
-            </div>
+            </div>-->
             
         </div>
         

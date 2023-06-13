@@ -17,6 +17,12 @@
             return $queryExecutor->select($sql);
         }
 
+        public function getFromBrand($marque) {
+            $queryExecutor = new QueryExecutor();
+            $sql = $this->generateQueryToCollectFromBrand($marque);
+            return $queryExecutor->select($sql);
+        }
+
         public function create($carData) {
             $queryExecutor = new QueryExecutor();
             $sql = $this->generateQueryToCreateNewRecord($carData);
@@ -25,12 +31,8 @@
 
         private function generateQueryToCollectAll() {
             return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie
-                        , GROUP_CONCAT(DISTINCT f.type) as financements, GROUP_CONCAT(DISTINCT chemin) as photos
+                        , GROUP_CONCAT(DISTINCT chemin) as photos
                         FROM voiture v
-                    INNER JOIN voiture_financement vf
-                        ON vf.id_voiture = v.id_voiture
-                    INNER JOIN financement f
-                        ON vf.id_financement = f.id_financement
                     INNER JOIN marque m
                         ON m.id_marque = v.id_marque
                     INNER JOIN energie e
@@ -42,14 +44,10 @@
                     GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
         }
 
-        private function generateQueryToCollectFromId($id_voiture) {
-            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, e.type as energie, 
-                        GROUP_CONCAT(DISTINCT f.type) as financements, GROUP_CONCAT(DISTINCT chemin) as photos
+        private function generateQueryToCollectFromBrand($marque) {
+            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie
+                        , GROUP_CONCAT(DISTINCT chemin) as photos
                         FROM voiture v
-                    INNER JOIN voiture_financement vf
-                        ON vf.id_voiture = v.id_voiture
-                    INNER JOIN financement f
-                        ON vf.id_financement = f.id_financement
                     INNER JOIN marque m
                         ON m.id_marque = v.id_marque
                     INNER JOIN energie e
@@ -58,8 +56,34 @@
                         ON vp.id_voiture = v.id_voiture
                     LEFT JOIN photo p
                         ON p.id_photo = vp.id_photo
+                        WHERE m.nom = '$marque'
+                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
+        }
+
+        private function generateQueryToCollectFromId($id_voiture) {
+            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, e.type as energie, 
+                        GROUP_CONCAT(DISTINCT chemin) as photos, bv.type, v.couleur, v.nombre_de_porte,
+                        v.nombre_de_place, v.puissance_fiscal, v.puissance, v.premier_main, crit_air, emission_co2, volume_coffre
+                        FROM voiture v
+                    INNER JOIN marque m
+                        ON m.id_marque = v.id_marque
+
+                    INNER JOIN energie e
+                        ON v.id_energie = e.id_energie
+
+                    LEFT JOIN voiture_boite_vitesse vbv
+                        ON v.id_voiture = vbv.id_voiture
+                    LEFT JOIN boite_de_vitesse bv
+                        ON bv.id_boite_vitesse = vbv.id_boite_vitesse
+
+                    LEFT JOIN voiture_photo vp
+                        ON vp.id_voiture = v.id_voiture
+                    LEFT JOIN photo p
+                        ON p.id_photo = vp.id_photo
+
                     WHERE v.id_voiture = $id_voiture
-                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage;";
+                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, bv.type, v.couleur, v.nombre_de_porte,
+                    v.nombre_de_place, v.puissance_fiscal, v.puissance ;";
         }
 
         private function generateQueryToCreateNewRecord($carData) {

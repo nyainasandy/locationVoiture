@@ -2,8 +2,33 @@
     require_once("data/Voitures.class.php");
 
     $voitures = new Voitures();
-    $allVoitures = $voitures->findAll();
 
+    $marque = null;
+    $allVoitures = null;
+    if(isset($_GET['marque'])) {
+        $marque = $_GET['marque'];
+        $allVoitures = $voitures->getFromBrand($marque);
+    } else {
+        $allVoitures = $voitures->findAll(); 
+    }
+    ?>
+
+    <div class="row navbar-light bg-light mx-1 pt-3 mb-4 rounded border">
+        
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <?php
+                    if($marque != null) {
+                        echo "<li class='breadcrumb-item active' aria-current='page'>$marque</li>";
+                    }
+                ?>
+            </ol>
+        </nav>
+
+    </div>
+        
+    <?php
     if($allVoitures != null) { ?>
 
         <div class='container border mb-3'>

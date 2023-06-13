@@ -43,7 +43,7 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-user"></i></a>
+                        <a class="nav-link active" aria-current="page" href="/?login"><i class="fa fa-user"></i></a>
                     </li>
                     
                 </ul>

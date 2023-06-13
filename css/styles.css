@@ -7,6 +7,7 @@
     --orange-color: #ff5602;
     --night-blue-color: #153e4d;
     --violet-color: #6451CE;
+    --gray-light: rgb(230, 227, 227);
 }
 
 .bg-violet {
@@ -15,6 +16,10 @@
 
 .bg-orange {
     background-color: var(--orange-color);
+}
+
+.bg-gray-light {
+    background-color: var(--gray-light);
 }
 
 .type {
@@ -167,13 +172,38 @@ ul.list-arrow > li > a:hover {
 
 .tabs .nav-item {
     width: 190px;
-    padding: 40px 0px;
-    
+}
 
+.tabs .nav-item a {
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 14px;
 }
 
 .tabs .nav-item a:not(.active) {
-    text-align: center;
-    font-size: 14px;
     background-color: #e7e7e7!important;
 }
+
+.label.description {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 0.2rem;
+    line-height: 0.7rem;
+}
+
+.funding > div:nth-child(even){
+    background-color: gray;
+    color: white;
+}
+
+img.side {
+    object-fit: contain; 
+    object-position: center;
+}
+
+.gradient {
+    background: rgb(209,208,208);
+    background: linear-gradient(90deg, #d1d0d0 0%, #f2f1f1 43%, #ffffff 100%);
+}
+
