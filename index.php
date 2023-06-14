@@ -9,6 +9,9 @@
 <body>
     
     <?php 
+
+    session_start();
+    
     require("fragments/Navigation.php");
     require("fragments/Header.php"); 
     // require("fragments/Filter.php"); 

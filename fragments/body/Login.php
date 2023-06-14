@@ -1,15 +1,26 @@
 <?php
-    require_once("/data/Connection.class.php");
+    require_once("data/Connection.class.php");
 
-    if(isset($_POST)) {
+    if(isset($_POST['user'])) {
         $user = $_POST['user'];
         $password = $_POST['password'];
 
         $connection = new Connection();
         $user_to_check = $connection->findByUsernameAndPassword($user, $password);
 
-        echo "Son mot de passe : $user_to_check[0]['password']";
+        if($user_to_check != null && count($user_to_check)) {
+            
+            $_SESSION["utilisateur"] = $user_to_check[0]['nom_utilisateur'];
+            $_SESSION["nom"] = $user_to_check[0]['nom'];
+            $_SESSION["role"] = $user_to_check[0]['role'];
+
+            header('location:/');
+        } else {
+            header('location: /?login&connection=ko');
+        }
     }
+
+    $error_connection = isset($_GET['connection']) ? $_GET['connection'] : null;
     
 ?>
 <div class="row gradient">
@@ -17,20 +28,29 @@
 
         <div class="d-flex align-items-center h-75 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-            <form style="width: 23rem;" class="pt-5 pe-5 border-end">
+            <form style="width: 23rem;" class="pt-5 pe-5 border-end" method="POST" action="/?login">
 
                 <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Se connecter</h3>
 
                 <div class="form-outline mb-4">
-                    <input type="email" id="user" name="user" class="form-control form-control-lg" placeholder="Email / nom d'utilisateur" />
+                    <input type="text" id="user" name="user" class="form-control form-control-lg" placeholder="Email / nom d'utilisateur" />
                 </div>
 
                 <div class="form-outline mb-4">
                     <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Mot de passe" />
                 </div>
 
+                <?php
+                    if($error_connection != null) {
+                        ?>
+                            <div class="text-danger">
+                                Le couple utilisateur/mot de passe incorrecte !!
+                            </div>
+                        <?php
+                    }
+                ?>
                 <div class="pt-1 mb-4">
-                    <button class="btn btn-info btn-lg w-100" type="button">Se connecter</button>
+                    <button class="btn btn-info btn-lg w-100" type="submit">Se connecter</button>
                 </div>
 
                 <p class="small mb-5 pb-lg-2 text-center">

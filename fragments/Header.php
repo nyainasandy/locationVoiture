@@ -10,23 +10,6 @@
                     <span class="fs-5">Lorem ipsum dolor sit amet</span>
                 </div>
             </div>
-            
-            <!--<div class="container pt-2 breadcrumb-header">
-                <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                    <ol class="breadcrumb ms-3">
-                        <li class="breadcrumb-item">
-                            <a href="/">Accueil</a>
-                        </li>
-                        <?php 
-                        if(isset($_GET["new"])) {
-                            echo "<li class='breadcrumb-item active' aria-current='page'>Ajouter nouvel véhicule</li>";
-                        }
-                            
-                        ?>
-                    </ol>
-                </nav>
-            </div>-->
-            
         </div>
         
     </div>

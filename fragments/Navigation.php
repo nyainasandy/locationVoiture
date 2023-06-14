@@ -1,6 +1,6 @@
 <div class="container-fluid bg-dark">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark d-flex align-items-center">
         
         <div class="container">
             
@@ -21,7 +21,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-barcode me-2"></i> Prix</a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-barcode me-2"></i> Prix</a>
                     </li>
                     
                     <li class="nav-item">
@@ -31,7 +31,7 @@
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-magnifying-glass me-3"></i></a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-magnifying-glass me-3"></i></a>
                     </li>
 
                     <li class="nav-item">
@@ -39,18 +39,36 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-bell me-3"></i></a>
+                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-bell me-3"></i></a>
                     </li>
-                    
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/?login"><i class="fa fa-user"></i></a>
-                    </li>
+
+                    <?php if(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]) { ?>
+                        
+                        <li class="nav-item dropdown bg-dark">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger"><i class="fa fa-user me-2"></i> <?php echo $_SESSION["nom"]; ?></button>
+                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    <?php } else { ?>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/?login"><i class="fa fa-user"></i></a>
+                        </li>
+                
+                    <?php } ?>
                     
                 </ul>
-
-                <!--<div class="d-flex">
-                    <span class="material-symbols-outlined">person</span>
-                </div>-->
 
             </div>
         </div>

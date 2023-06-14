@@ -11,7 +11,7 @@
             }
                 
             private function generateQueryToGetUsernameAndPassword($user, $password) {
-                return "SELECT *
+                return "SELECT u.nom_utilisateur, u.nom, r.nom as role
                         FROM user u
                         INNER JOIN user_role ur
                             ON u.id_user = ur.id_user
