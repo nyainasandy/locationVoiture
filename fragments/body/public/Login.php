@@ -12,9 +12,10 @@
             
             $_SESSION["utilisateur"] = $user_to_check[0]['nom_utilisateur'];
             $_SESSION["nom"] = $user_to_check[0]['nom'];
+            $_SESSION["prenom"] = $user_to_check[0]['prenom'];
             $_SESSION["role"] = $user_to_check[0]['role'];
 
-            header('location:/');
+            header('location:/?profile');
         } else {
             header('location: /?login&connection=ko');
         }

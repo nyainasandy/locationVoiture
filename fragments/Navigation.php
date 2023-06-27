@@ -1,3 +1,5 @@
+<?php require_once("data/User.class.php") ?>
+
 <div class="container-fluid bg-dark">
 
     <nav class="navbar navbar-expand-lg navbar-dark d-flex align-items-center">
@@ -42,18 +44,19 @@
                         <a class="nav-link" aria-current="page" href="#"><i class="fa fa-bell me-3"></i></a>
                     </li>
 
-                    <?php if(isset($_SESSION["utilisateur"]) && $_SESSION["utilisateur"]) { ?>
+                    <?php 
+
+                    $user = new User();
+                    if($user->isConnected()) { ?>
                         
                         <li class="nav-item dropdown bg-dark">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-danger"><i class="fa fa-user me-2"></i> <?php echo $_SESSION["nom"]; ?></button>
+                                <button type="button" class="btn btn-danger"><i class="fa fa-user me-2"></i> <?php echo $user->getName(); ?></button>
                                 <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li><a class="dropdown-item" href="/?profile">Page personnelle</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="logout.php">Se déconnecter</a></li>
                                 </ul>

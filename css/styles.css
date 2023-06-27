@@ -8,6 +8,7 @@
     --night-blue-color: #153e4d;
     --violet-color: #6451CE;
     --gray-light: rgb(230, 227, 227);
+    --gold: #ffd700;
 }
 
 .bg-violet {
@@ -72,13 +73,15 @@
     font-family: 'Bicro', sans-serif;
     font-size: 100px;
     font-weight: 500;
-    color: var(--orange-color);
+    color: var(--gold);
+    text-shadow: 2px 2px var(--orange-color);
+    filter: brightness(1.75);
 }
 
 .logo + div {
-    font-size: 32px;
-    font-weight: 300;
-    text-shadow: black 1px 0 10px;
+    font-family: sans-serif;
+    font-size: 24px;
+    text-shadow: 2px 2px gray;
     color: white;
 }
 
