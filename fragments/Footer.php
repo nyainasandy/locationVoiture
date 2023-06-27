@@ -1,4 +1,4 @@
-<div class="container-fluid footer mt-5 bg-violet">
+<div class="container-fluid footer bg-green">
     <?php require("footer/Footer.social-media.php"); ?>
 </div>
 

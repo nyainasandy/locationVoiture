@@ -1,3 +1,4 @@
+<?php require_once("data/Opening.class.php"); ?>
 <div class="label">Garage</div>
 
 <div class="header-label mt-3 mb-2"><i class="fa fa-phone me-3"></i> Nous contacter</div>
@@ -12,42 +13,25 @@
 </div>
 
 <div class="header-label my-4"><i class="fa fa-calendar-days me-3"></i> Heure d'ouverture</div>
-<div class="row ms-2">
-    <div class="col-2">Lun.</div>
-    <div class="col-4">08:45 - 12:00</div>
-    <div class="col-4">14:00 - 18:00</div>
-</div>
 
-<div class="row ms-2">
-    <div class="col-2">Mar.</div>
-    <div class="col-4">08:45 - 12:00</div>
-    <div class="col-4">14:00 - 18:00</div>
-</div>
+<?php 
+    $opening = new Opening();
+    $allOpeningTimes = $opening->findAll();
+    foreach($allOpeningTimes as $allOpeningTime) {
+?>
+    <div class="row ms-2">
+        <div class="col-2"><?php echo $allOpeningTime["jour"]; ?></div>
 
-<div class="row ms-2">
-    <div class="col-2">Mer.</div>
-    <div class="col-4">08:45 - 12:00</div>
-    <div class="col-4">14:00 - 18:00</div>
-</div>
+        <?php 
+            if(is_null($allOpeningTime["am"]) && is_null($allOpeningTime["pm"])) { ?>
+                <div class="col-8">Fermé</div>
+            <?php } else { ?>
+                <div class="col-4"><?php echo $allOpeningTime["am"] ?: 'Fermé'; ?></div>
+                <div class="col-4"><?php echo $allOpeningTime["pm"] ?: 'Fermé'; ?></div>
+            <?php }
+        ?>
+        
+    </div>
 
-<div class="row ms-2">
-    <div class="col-2">Jeu.</div>
-    <div class="col-4">08:45 - 12:00</div>
-    <div class="col-4">14:00 - 18:00</div>
-</div>
+<?php } ?>
 
-<div class="row ms-2">
-    <div class="col-2">Ven.</div>
-    <div class="col-4">08:45 - 12:00</div>
-    <div class="col-4">14:00 - 18:00</div>
-</div>
-
-<div class="row ms-2">
-    <div class="col-2">Sam.</div>
-    <div class="col-8">Fermé</div>
-</div>
-
-<div class="row ms-2">
-    <div class="col-2">Dim.</div>
-    <div class="col-8">Fermé</div>
-</div>

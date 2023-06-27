@@ -17,12 +17,15 @@
     $allFundings = $fundings->findAll();
 ?>
 
-<form method="POST" action="Create.php" enctype="multipart/form-data">
+<form method="POST" action="Create.php" enctype="multipart/form-data" class="p-5">
 
     <!-- tab header -->
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a href="#caracteristiques" class="nav-link active" data-bs-toggle="tab">Caractéristiques</a>
+        </li>
+        <li class="nav-item">
+            <a href="#photos" class="nav-link" data-bs-toggle="tab">Photos</a>
         </li>
         <li class="nav-item">
             <a href="#financements" class="nav-link" data-bs-toggle="tab">Financements</a>
@@ -33,6 +36,10 @@
     <div class="tab-content">
         <div class="tab-pane fade show active" id="caracteristiques">
             <?php require("Caracteristiques.php"); ?>
+        </div>
+
+        <div class="tab-pane fade" id="photos">
+            <?php require("Photos.php"); ?>
         </div>
 
         <div class="tab-pane fade" id="financements">

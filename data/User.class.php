@@ -42,7 +42,20 @@
         }
 
         public function isAdmin() {
-            return $this->getRole() == 'Administrateur';
+            return $this->getFirstRole() == 'Administrateur';
+        }
+
+        public function isEmployees() {
+            return $this->getFirstRole() == 'Employes';
+        }
+
+        public function isSailor() {
+            return $this->getFirstRole() == 'vendeurs';
+        }
+
+        private function getFirstRole() {
+            $role = explode(",", $this->getRole());
+            return $role[0];
         }
 
         public function getRole() {

@@ -10,6 +10,7 @@
 
         if($user_to_check != null && count($user_to_check)) {
             
+            print_r($user_to_check[0]);
             $_SESSION["utilisateur"] = $user_to_check[0]['nom_utilisateur'];
             $_SESSION["nom"] = $user_to_check[0]['nom'];
             $_SESSION["prenom"] = $user_to_check[0]['prenom'];

@@ -10,9 +10,6 @@
             include("fragments/body/public/Aiguillage.php");
         }
         
-
     }
-
-
 
 ?>

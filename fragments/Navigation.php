@@ -51,8 +51,22 @@
                         
                         <li class="nav-item dropdown bg-dark">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-danger"><i class="fa fa-user me-2"></i> <?php echo $user->getName(); ?></button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php
+                                
+                                $background = "bg-yellow";
+                                $color = "text-dark";
+
+                                if($user->isAdmin()) {
+                                    $background = "bg-red";
+                                    $color = "text-white";
+
+                                } else if($user->isEmployees()) {
+                                    $background = "bg-green";
+                                    $color = "text-white";
+                                    
+                                } ?>
+                                <button type="button" class="btn <?php echo $background.' '.$color; ?>"><i class="fa fa-user me-2"></i></button>
+                                <button type="button" class="btn <?php echo $background; ?> dropdown-toggle dropdown-toggle-split <?php echo $color; ?>" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu">

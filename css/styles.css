@@ -9,18 +9,40 @@
     --violet-color: #6451CE;
     --gray-light: rgb(230, 227, 227);
     --gold: #ffd700;
+
+    --black: #1E0F1C;
+    --red: #A7001E;
+    --yellow: #E2E9C0;
+    --green : #7AA95C;
+    --brown: #955149;
 }
 
 .bg-violet {
-    background-color: var(--violet-color);
+    background-color: var(--violet-color)!important;
 }
 
 .bg-orange {
-    background-color: var(--orange-color);
+    background-color: var(--orange-color)!important;
 }
 
 .bg-gray-light {
-    background-color: var(--gray-light);
+    background-color: var(--gray-light)!important;
+}
+
+.bg-green {
+    background-color: var(--green)!important;
+}
+
+.bg-red {
+    background-color: var(--red)!important;  
+}
+
+.bg-brown {
+    background-color: var(--brown)!important;  
+}
+
+.bg-yellow {
+    background-color: var(--yellow)!important;  
 }
 
 .type {
@@ -197,3 +219,7 @@ img.side {
     background: linear-gradient(90deg, #d1d0d0 0%, #f2f1f1 43%, #ffffff 100%);
 }
 
+.nav-left {
+    background-color: var(--black);
+    color: white;
+}

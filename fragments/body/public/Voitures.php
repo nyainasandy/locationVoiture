@@ -32,27 +32,63 @@
     if($allVoitures != null) { ?>
 
         <div class='container border mb-3'>
-            <div class='row p-3'>
-            <div class='fw-bold col-lg-6 d-flex align-items-center'>
-                <?php echo count($allVoitures)." annonces"; ?>
+
+            <h3 class="h3 mt-3 text-center">Filtre de recherche</h3>
+            
+            <div class="row">
+                <div class="col-lg-4 form-group my-2">
+                    <label for="km">Kilométrage</label> 
+                    <input 
+                        type="text" 
+                        class="km-range form-control" 
+                        name="km" 
+                        value="" 
+                        data-type="double"
+                        data-min="500"
+                        data-max="200000"
+                        data-from="700"
+                        data-to="80000"
+                        data-grid="true" />
+                </div> 
+                <div class="col-lg-4 form-group my-2">
+                    <label for="price">Prix</label> 
+                    <input 
+                        type="text" 
+                        class="price-range form-control" 
+                        name="price" 
+                        value="" 
+                        data-type="double"
+                        data-min="2000"
+                        data-max="20000"
+                        data-from="2000"
+                        data-to="15000"
+                        data-grid="true" />
+                </div> 
+                <div class="col-lg-4 form-group my-2">
+                    <label for="year">Années</label> 
+                    <input 
+                        type="text" 
+                        class="year-range form-control" 
+                        name="year" 
+                        value="" 
+                        data-type="double"
+                        data-min="2000"
+                        data-max="2022"
+                        data-from="2010"
+                        data-to="2020"
+                        data-grid="true" />
+                </div> 
             </div>
-            <div class='col-lg-6'>
-                <div class='row d-flex align-items-center'>
-                    <div class='col-6 text-end'>
-                        Trier par :
-                    </div>
-                    <div class='col-6'>
-                        <select id='tri' name='tri' class='form-select'>
-                            <option value='0'>Prix croissant</option>
-                            <option value='1'>Prix décroissant</option>
-                            <option value='2'>Mensualité moins cher</option>
-                            <option value='3'>Mensualité plus cher</option>
-                            <option value='4'>Pertinence</option>
-                        </select>
-                    </div>
+            
+            <div class='row p-3'>
+                <div class='fw-bold col-lg-6 d-flex align-items-center'>
+                    <?php echo count($allVoitures)." annonces"; ?>
+                </div>
+                <div class="col-lg-6 d-flex flex-row-reverse">
+                    <button class="btn btn-success">Appliquer filtre</button>
                 </div>
             </div>
-            </div>
+
         </div>
 
         <div class='row g-2'>

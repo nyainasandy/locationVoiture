@@ -14,30 +14,30 @@
 
     <div class="col-6">
         <label for="modele">Modèle</label> 
-        <input id="modele" name="modele" placeholder="Modèle du véhicule" type="text" required="required" class="form-control">
+        <input id="modele" name="modele" placeholder="Modèle du véhicule" type="text" required="required" class="form-control" />
     </div>
 </div>
 
 <div class="form-group mb-3 row px-3">
     <div class="col-6">
         <label for="annee">Année</label> 
-        <input id="annee" name="annee" placeholder="Année de sortie" type="number" min="1900" max="2099" required="required" class="form-control">
+        <input id="annee" name="annee" placeholder="Année de sortie" type="number" min="1900" max="2099" required="required" class="form-control" />
     </div>
     <div class="col-6">
         <label for="mise_en_circulation">Mise en circulation</label> 
-        <input id="mise_en_circulation" name="mise_en_circulation" placeholder="La date de la première mise en circulation" type="date" value="2023-06-05" required="required" class="form-control">
+        <input id="mise_en_circulation" name="mise_en_circulation" placeholder="La date de la première mise en circulation" type="date" value="2023-06-05" required="required" class="form-control" />
     </div>
 </div>
 
 <div class="form-group mb-3 row px-3">
     <div class="col-6">
         <label for="nombre_porte">Nombre de porte</label> 
-        <input id="nombre_porte" name="nombre_porte" placeholder="Combien de porte sur le vehicule ?" type="number" required="required" class="form-control">
+        <input id="nombre_porte" name="nombre_porte" placeholder="Combien de porte sur le vehicule ?" type="number" required="required" class="form-control" />
     </div>
 
     <div class="col-6">
         <label for="nombre_place">Nombre de place</label> 
-        <input id="nombre_place" name="nombre_place" placeholder="Combien de personnes peuvent s'installer ?" type="number" required="required" class="form-control">
+        <input id="nombre_place" name="nombre_place" placeholder="Combien de personnes peuvent s'installer ?" type="number" required="required" class="form-control" />
     </div>
     
 </div>
@@ -45,12 +45,12 @@
 <div class="form-group mb-3 row px-3">
     <div class="col-6">
         <label for="puissance_fiscale">Puissance fiscale</label> 
-        <input id="puissance_fiscale" name="puissance_fiscale" placeholder="Sa puissance fiscale" type="number" required="required" class="form-control">
+        <input id="puissance_fiscale" name="puissance_fiscale" placeholder="Sa puissance fiscale" type="number" required="required" class="form-control" />
     </div>
 
     <div class="col-6">
         <label for="puissance">Puissance</label> 
-        <input id="puissance" name="puissance" placeholder="Sa puissance" type="number" class="form-control">
+        <input id="puissance" name="puissance" placeholder="Sa puissance" type="number" class="form-control" />
     </div>
 </div>
 
@@ -60,17 +60,17 @@
         
         <div class="form-group mb-3">
             <label for="kilometrage">Kilométrage</label> 
-            <input id="kilometrage" name="kilometrage" placeholder="Nombre de kilomètre actuel" type="number" required="required" class="form-control">
+            <input id="kilometrage" name="kilometrage" placeholder="Nombre de kilomètre actuel" type="number" required="required" class="form-control" />
         </div>
 
         <div class="form-group mb-3">
             <label for="prix">Prix</label> 
-            <input id="prix" name="prix" placeholder="Son prix de vente" type="number" required="required" class="form-control">
+            <input id="prix" name="prix" placeholder="Son prix de vente" type="number" required="required" class="form-control" />
         </div>
 
         <div class="form-group mb-3">
             <label for="couleur">Couleur</label> 
-            <input id="couleur" name="couleur" placeholder="Sa couleur actuelle" type="text" required="required" class="form-control">
+            <input id="couleur" name="couleur" placeholder="Sa couleur actuelle" type="text" required="required" class="form-control" />
         </div>
 
         <div class="form-group mb-3">
@@ -89,14 +89,14 @@
 
         <div class="form-group mb-3">
             <label for="emission_co2">Emission co2</label> 
-            <input id="emission_co2" name="emission_co2" placeholder="Emissions territoriales de gaz à effet de serre" type="number" required="required" class="form-control">
+            <input id="emission_co2" name="emission_co2" placeholder="Emissions territoriales de gaz à effet de serre" type="number" required="required" class="form-control" />
         </div>
 
         <div class="form-group mb-3">
             <label>Première main</label> 
             <div>
                 <div class="custom-control custom-checkbox custom-control-inline">
-                    <input name="premiere_main" id="premiere_main" type="checkbox" class="custom-control-input" value="1" checked="checked"> 
+                    <input name="premiere_main" id="premiere_main" type="checkbox" class="custom-control-input" value="1" checked="checked" /> 
                     <label for="premiere_main" class="custom-control-label">Oui</label>
                 </div>
             </div>
@@ -104,7 +104,7 @@
 
         <div class="form-group mb-3">
             <label for="volume_coffre">Volume coffre</label> 
-            <input id="volume_coffre" name="volume_coffre" placeholder="Le volume total du coffre" type="nomber" required="required" class="form-control">
+            <input id="volume_coffre" name="volume_coffre" placeholder="Le volume total du coffre" type="nomber" required="required" class="form-control" />
         </div>
 
         <div class="form-group mb-3">
@@ -138,7 +138,7 @@
     <div class="col-6">
         <div class="form-group">
             <label for="photo">Photo</label> 
-            <input class="form-control" id="photo" name="photo" placeholder="La photo du véhicule" type="file" accept=".jpg, .png, .jpeg, .gif, .bmp">
+            <input class="form-control" id="photo" name="photo" placeholder="La photo du véhicule" type="file" accept=".jpg, .png, .jpeg, .gif, .bmp" />
         </div>
 
         <!--<div class="text-center mt-3 border p-2">
