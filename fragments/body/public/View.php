@@ -21,21 +21,7 @@
 
     $avis= new Avis();
     $allAvis = $avis->findByVehicleId($id_voiture);
-?>
 
-    <div class="row navbar-light bg-light me-3 pt-3 mb-4 rounded border">
-        
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="/?marque=<?php echo $voiture['nom']; ?>"><?php echo $voiture['nom']; ?></a></li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo $voiture['model']; ?></li>
-            </ol>
-        </nav>
-    
-    </div>
-
-<?php
     require("view/Header.php");
     require("view/Photos.php");
     require("view/Financement.php"); 

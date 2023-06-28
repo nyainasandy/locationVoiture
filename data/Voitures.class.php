@@ -29,6 +29,12 @@
             return $queryExecutor->insert($sql);
         }
 
+        public function quickFilter($minKm, $maxKm, $minPrice, $maxPrice, $minYear, $maxYear) {
+            $queryExecutor = new QueryExecutor();
+            $sql = $this->generateQueryFilter($minKm, $maxKm, $minPrice, $maxPrice, $minYear, $maxYear);
+            return $queryExecutor->select($sql);
+        }
+
         private function generateQueryToCollectAll() {
             return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie
                         , GROUP_CONCAT(DISTINCT chemin) as photos
@@ -84,6 +90,23 @@
                     WHERE v.id_voiture = $id_voiture
                     GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, bv.type, v.couleur, v.nombre_de_porte,
                     v.nombre_de_place, v.puissance_fiscal, v.puissance ;";
+        }
+
+        private function generateQueryFilter($minKm, $maxKm, $minPrice, $maxPrice, $minYear, $maxYear) {
+            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie, GROUP_CONCAT(DISTINCT chemin) as photos
+                        FROM voiture v
+                    INNER JOIN marque m
+                        ON m.id_marque = v.id_marque
+                    INNER JOIN energie e
+                        ON v.id_energie = e.id_energie
+                    LEFT JOIN voiture_photo vp
+                        ON vp.id_voiture = v.id_voiture
+                    LEFT JOIN photo p
+                        ON p.id_photo = vp.id_photo
+                    WHERE v.kilometrage BETWEEN $minKm AND $maxKm
+                    AND v.prix BETWEEN $minPrice AND $maxPrice
+                    AND v.annee BETWEEN $minYear AND $maxYear
+                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
         }
 
         private function generateQueryToCreateNewRecord($carData) {
