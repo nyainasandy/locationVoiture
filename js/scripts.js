@@ -57,3 +57,41 @@ function resetFilter() {
     });
 
 }
+
+function loadImageToUpload(input) {
+
+    if(input.files && input.files[0]) {
+        $('.'+input.id).attr('src', window.URL.createObjectURL(input.files[0]));
+    }
+    
+}
+
+function clearInput(id) {
+    $('#' + id + " input[type=time]").each(function() {
+        $(this).removeAttr('value');
+    });
+}
+
+function saveOpeningChange(id) {
+    var fromAm = $('#' + id + " #morning_0").val();
+    var toAm = $('#' + id + " #morning_1").val();
+    var fromPm = $('#' + id + " #afternoon_0").val();
+    var toPm = $('#' + id + " #afternoon_1").val();
+
+    console.log("AM (" + fromAm + " - " + toAm + ") - PM(" + fromPm + " - " + toPm + ")");
+
+    $.post('/opening.php', 
+    {
+        id: id,
+        fromAm: fromAm, 
+        toAm: toAm,
+        fromPm: fromPm,
+        toPm: toPm
+    })
+    .done(function(data) {
+        $('#success').html("La modification a été prise en compte !!");
+    })
+    .fail(function(xhr, status, error) {
+        $('#error').html("Une erreur inattendue est survenue lors de l'enregistrement du (" + id + ") !! (status : " + status + ") " + error);
+    });
+}

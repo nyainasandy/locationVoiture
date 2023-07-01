@@ -11,6 +11,7 @@
             }
                 
             private function generateQueryToGetUsernameAndPassword($user, $password) {
+                
                 return "SELECT u.nom_utilisateur, u.nom, u.prenom, GROUP_CONCAT(DISTINCT r.nom) as role
                         FROM user u
                         INNER JOIN user_role ur

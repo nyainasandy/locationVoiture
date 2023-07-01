@@ -167,13 +167,19 @@ ul.list-arrow > li > a:hover {
 .miniature {
     width: 125px; 
     height: 100px; 
-    object-fit: cover
+    object-fit: cover;
 }
 
 .apercu {
     width: 408px; 
     height: 306px; 
-    object-fit: cover
+    object-fit: cover;
+}
+
+.apercu-scale {
+    width: 257px; 
+    height: 253px; 
+    object-fit: cover;
 }
 
 #big {
@@ -222,4 +228,8 @@ img.side {
 .nav-left {
     background-color: var(--black);
     color: white;
+}
+
+div.bloc > div > div {
+    min-height: 150px;
 }

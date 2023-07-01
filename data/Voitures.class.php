@@ -36,7 +36,7 @@
         }
 
         private function generateQueryToCollectAll() {
-            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie
+            return "SELECT v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage, e.type as energie
                         , GROUP_CONCAT(DISTINCT chemin) as photos
                         FROM voiture v
                     INNER JOIN marque m
@@ -47,11 +47,11 @@
                         ON vp.id_voiture = v.id_voiture
                     LEFT JOIN photo p
                         ON p.id_photo = vp.id_photo
-                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
+                    GROUP BY v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage;";
         }
 
         private function generateQueryToCollectFromBrand($marque) {
-            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie
+            return "SELECT v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage, e.type as energie
                         , GROUP_CONCAT(DISTINCT chemin) as photos
                         FROM voiture v
                     INNER JOIN marque m
@@ -63,11 +63,11 @@
                     LEFT JOIN photo p
                         ON p.id_photo = vp.id_photo
                         WHERE m.nom = '$marque'
-                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
+                    GROUP BY v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage;";
         }
 
         private function generateQueryToCollectFromId($id_voiture) {
-            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, e.type as energie, 
+            return "SELECT v.id_voiture, m.nom, v.model, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, e.type as energie, 
                         GROUP_CONCAT(DISTINCT chemin) as photos, bv.type, v.couleur, v.nombre_de_porte,
                         v.nombre_de_place, v.puissance_fiscal, v.puissance, v.premier_main, crit_air, emission_co2, volume_coffre
                         FROM voiture v
@@ -88,12 +88,12 @@
                         ON p.id_photo = vp.id_photo
 
                     WHERE v.id_voiture = $id_voiture
-                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, bv.type, v.couleur, v.nombre_de_porte,
+                    GROUP BY v.id_voiture, m.nom, v.model, v.prix, v.mise_en_circulation, v.annee, v.kilometrage, bv.type, v.couleur, v.nombre_de_porte,
                     v.nombre_de_place, v.puissance_fiscal, v.puissance ;";
         }
 
         private function generateQueryFilter($minKm, $maxKm, $minPrice, $maxPrice, $minYear, $maxYear) {
-            return "SELECT v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage, e.type as energie, GROUP_CONCAT(DISTINCT chemin) as photos
+            return "SELECT v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage, e.type as energie, GROUP_CONCAT(DISTINCT chemin) as photos
                         FROM voiture v
                     INNER JOIN marque m
                         ON m.id_marque = v.id_marque
@@ -106,12 +106,11 @@
                     WHERE v.kilometrage BETWEEN $minKm AND $maxKm
                     AND v.prix BETWEEN $minPrice AND $maxPrice
                     AND v.annee BETWEEN $minYear AND $maxYear
-                    GROUP BY v.id_voiture, m.nom, v.model, v.photo, v.prix, v.annee, v.kilometrage;";
+                    GROUP BY v.id_voiture, m.nom, v.model, v.prix, v.annee, v.kilometrage;";
         }
 
         private function generateQueryToCreateNewRecord($carData) {
 
-            $photo = $carData->getPhoto();
             $annee = $carData->getAnnee();
             $kilometrage = $carData->getKilometrage();
             $prix = $carData->getPrix();
@@ -131,9 +130,9 @@
             $id_garantie = $carData->getIdGarantie();
 
             return "INSERT INTO voiture 
-                        (id_voiture, photo, annee, kilometrage, prix, model, couleur, nombre_de_porte, nombre_de_place, puissance_fiscal, puissance, crit_air,
+                        (id_voiture, annee, kilometrage, prix, model, couleur, nombre_de_porte, nombre_de_place, puissance_fiscal, puissance, crit_air,
                         emission_co2, mise_en_circulation, premier_main, volume_coffre, id_marque, id_energie, id_garantie)
-                    VALUES (NULL, '$photo', $annee, $kilometrage, $prix, '$modele', '$couleur', $nombre_porte, $nombre_place, $puissance_fiscale, $puissance, $crit_air,
+                    VALUES (NULL, $annee, $kilometrage, $prix, '$modele', '$couleur', $nombre_porte, $nombre_place, $puissance_fiscale, $puissance, $crit_air,
                         $emission_co2, '$mise_en_circulation', $premiere_main, $volume_coffre, $id_marque, $id_energie, $id_garantie)";
         }
     

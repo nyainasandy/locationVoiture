@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row social-media">
         <div class="col-lg-6">
-                Get connecter with us on social networks:
+            Suivez nous sur les réseaux sociaux :
         </div>
         <div class="col-lg-6 text-end">
             
@@ -21,7 +21,6 @@
                 <i class="fab fa-github"></i>
             </a>
             
-
         </div>
     </div>
 </div>

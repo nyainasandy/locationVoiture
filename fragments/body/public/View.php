@@ -9,22 +9,24 @@
     $voitures = new Voitures();
     $allVoiture = $voitures->getFromId($id_voiture);
 
-    $voiture = $allVoiture[0];
+    if(count($allVoiture) > 0) {
 
-    $date_circulation = date_create($voiture['mise_en_circulation']);
+        $voiture = $allVoiture[0];
 
-    $fundings = new Fundings();
-    $allFundings = $fundings->findByVehicleId($id_voiture);
+        $date_circulation = date_create($voiture['mise_en_circulation']);
 
-    $photos = new Photos();
-    $allPhotos = $photos->findByVehicleId($id_voiture);
+        $fundings = new Fundings();
+        $allFundings = $fundings->findByVehicleId($id_voiture);
 
-    $avis= new Avis();
-    $allAvis = $avis->findByVehicleId($id_voiture);
+        $photos = new Photos();
+        $allPhotos = $photos->findByVehicleId($id_voiture);
 
-    require("view/Header.php");
-    require("view/Photos.php");
-    require("view/Financement.php"); 
+        $avis= new Avis();
+        $allAvis = $avis->findByVehicleId($id_voiture);
+
+        require("view/Header.php");
+        require("view/Photos.php");
+        require("view/Financement.php"); 
 ?>
 
 <div class="row">
@@ -49,3 +51,7 @@
         <img src="/images/pub-toyota.png" alt="" />
     </div>
 </div>
+
+<?php } else { 
+    require("view/Header.php");
+}

@@ -3,6 +3,7 @@
     require_once("data/CarData.class.php");
     require_once("data/Voitures.class.php");
     require_once("data/Fundings.class.php");
+    require_once("data/Photos.class.php");
 
     if(isset($_POST["submit"])) {
 
@@ -25,15 +26,12 @@
         $garantie = $_POST["garantie"];
         $energie = $_POST["energie"];
 
-        $photo = "/images/".$_FILES["photo"]["name"];
-
         print "marque : $marque $modele<br/>";
         print "année : $annee - mise en circulation : $mise_en_circulation<br/>";
         print "nombre de porte : $nombre_porte - nombre place : $nombre_place<br/>";
         print "garantie : $garantie<br/>";
         print "energie : $energie<br/>";
         print "première main : $premiere_main<br/>";
-        print "photo : $photo";
 
         $carData = new CarData();
 
@@ -56,32 +54,52 @@
         $carData->setIdGarantie($garantie);
         $carData->setIdEnergie($energie);
 
-        $carData->setPhoto($photo);
-
         $voitures = new Voitures();
-        $last_insert_id = $voitures->create($carData);
+        $voiture_id = $voitures->create($carData);
 
-        $id_financement = $_POST["financement"];
-        $nombre_mois = $_POST["nombre_mois"];
-        $interets = $_POST["interets"];
-        $montant_total = $_POST["montant_total"];
-
-        $fundings = new Fundings();
-        $fundings->create($last_insert_id, $id_financement, $nombre_mois, $interets, $montant_total);
-        $fundings->generateQueryToCreateNewRecord();
-        
+        /*echo '<pre>';
         var_dump($_FILES);
-        $tmpName = $_FILES['photo']['tmp_name'];
-        $name = $_FILES['photo']['name'];
-        $size = $_FILES['photo']['size'];
+        echo '</pre>';*/
+        
+        $fundings = new Fundings();
+        $photos = new Photos();
 
         $maxSize = 700000;
 
-        if($size <= $maxSize) {
-            move_uploaded_file($tmpName, './images/'.$name);
-            header("location:/?new&cs=ok");
-        } else {
-            header("location:/?new&cs=ko&si=tb");
+        for($i=0; $i<5; $i++) {
+
+            if($i < 4 && isset($_POST["financement$i"])) {
+                $id_financement = $_POST["financement$i"];
+                $nombre_mois = $_POST["nombre_mois$i"];
+                $mensualite = $_POST["mensualite$i"];
+                
+                echo "CREATE FUNDING : $voiture_id - $id_financement";
+                $fundings->create($voiture_id, $id_financement, $nombre_mois, $mensualite);
+            } 
+            
+            if (isset($_FILES["photo$i"])) {
+                    
+                $tmpName = $_FILES["photo$i"]['tmp_name'];
+                $name = $_FILES["photo$i"]['name'];
+                $size = $_FILES["photo$i"]['size'];
+
+                $directory = "./images/$voiture_id";
+                $uploaded_name = "$directory/$name";
+                if($size <= $maxSize) {
+                    
+                    if(!file_exists($directory)) {
+                        echo "DIRECTORY $directory not exist, create new one!!";
+                        mkdir($directory);
+                    }
+
+                    echo "UPLOAD FILE : $uploaded_name";
+                    move_uploaded_file($tmpName, $uploaded_name);
+                    $photos->create($uploaded_name, $voiture_id);
+                }
+            }
+
         }
+
+        header("location:/?new&cs=ok");
     }
 ?>

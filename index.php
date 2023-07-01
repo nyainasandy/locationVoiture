@@ -24,7 +24,7 @@
         require("fragments/body/connected/Body.php"); 
     } else {
         require("fragments/Header.php");
-        require("fragments/body/public/Body.php"); 
+        require("fragments/body/common/Body.php"); 
     }
     
     require("fragments/Footer.php"); 

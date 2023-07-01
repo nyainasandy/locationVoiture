@@ -6,4 +6,5 @@
     <li><a href="">Rejoignes-nous</a></li>
     <li><a href="">Aide & FAQ</a></li>
     <li><a href="">Nos groupes</a></li>
+    <li><a href="/?contact">Nos écrire</a></li>
 </ul>

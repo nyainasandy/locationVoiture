@@ -15,9 +15,11 @@
             return $queryExecutor->select($sql);
         }
 
-        public function create($id_voiture, $id_financement, $nombre_mois, $interet, $montant_total) {
+        public function create($id_voiture, $id_financement, $nombre_mois, $mensualite) {
             $queryExecutor = new QueryExecutor();
-            $sql = $this->generateQueryToCreateNewRecord($id_voiture, $id_financement, $nombre_mois, $interet, $montant_total);
+            $sql = $this->generateQueryToCreateNewRecord($id_voiture, $id_financement, $nombre_mois, $mensualite);
+
+            echo "FUNDING : $sql<br/>";
             return $queryExecutor->insert($sql);
         }
 
@@ -26,10 +28,10 @@
                         FROM financement f;";
         }
         
-        private function generateQueryToCreateNewRecord($id_voiture, $id_financement, $nombre_mois, $interet, $montant_total) {
+        private function generateQueryToCreateNewRecord($id_voiture, $id_financement, $nombre_mois, $mensualite) {
             return "INSERT INTO voiture_financement 
-                        (id_voiture, id_financement, nombre_mois, interet, montant_total)
-                    VALUES ($id_voiture, $id_financement, $nombre_mois, $interet, $montant_total)";
+                        (id_voiture, id_financement, nombre_mois, mensualite)
+                    VALUES ($id_voiture, $id_financement, $nombre_mois, $mensualite)";
         }
         
         private function generateQueryToGetFundsFromIdVehicle($id_voiture) {

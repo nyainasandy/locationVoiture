@@ -14,36 +14,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active " aria-current="page" href="/"><i class="fa fa-home me-2"></i> Accueil</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-calendar me-2"></i> Service</a>
-                    </li>
+                    <?php if(isset($_GET["service"])) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"><i class="fa fa-home me-2"></i> Accueil</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-barcode me-2"></i> Prix</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/?service"><i class="fa fa-calendar me-2"></i> Service</a>
+                        </li>
+                    <?php } else { ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link active " aria-current="page" href="/"><i class="fa fa-home me-2"></i> Accueil</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/?service"><i class="fa fa-calendar me-2"></i> Service</a>
+                        </li>
+
+                    <?php } ?>
                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="?new"><i class="fa fa-piggy-bank me-2"></i> Promotion</a>
-                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-magnifying-glass me-3"></i></a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa fa-envelope me-3"></i></a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#"><i class="fa fa-bell me-3"></i></a>
-                    </li>
-
+                    
                     <?php 
 
                     $user = new User();

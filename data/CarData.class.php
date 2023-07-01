@@ -1,6 +1,5 @@
 <?php
     class CarData {
-        private $photo;
         private $annee;
         private $kilometrage;
         private $prix;
@@ -19,14 +18,6 @@
         private $id_energie;
         private $id_garantie;
 
-        public function setPhoto($photo) {
-            $this->photo = $photo;
-        }
-
-        public function getPhoto() {
-            return $this->photo;
-        }
-        
         public function setAnnee($annee) {
             $this->annee = $annee;
         }

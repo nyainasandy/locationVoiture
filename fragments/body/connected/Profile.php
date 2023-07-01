@@ -27,8 +27,7 @@
   
   <div class="col-lg-6 text-right d-flex flex-row-reverse p-2"> 
     <a class="btn <?php echo $color; ?>" href="/logout.php"><i class="fa fa-lock"></i></a>
-    <a class="btn <?php echo $color; ?>" href="/"><i class="fa fa-gear"></i></a>
-    <a class="btn <?php echo $color; ?>" href="/"><i class="fa fa-envelope"></i></a>
+    <a class="btn <?php echo $color; ?>" href="/?profile"><i class="fa fa-envelope"></i></a>
   </div>
 </div>
 
@@ -51,6 +50,12 @@
     <hr class="hr"/>
     <div class="mb-3 ms-3">
       <a class="text-decoration-none text-white" href="/?profile">
+        <i class="fa fa-envelope me-2"></i> Message
+      </a>
+    </div>
+
+    <div class="mb-3 ms-3">
+      <a class="text-decoration-none text-white" href="/?profile&new">
         <i class="fa fa-car-side me-2"></i> Nouvel véhicule
       </a>
     </div>
@@ -77,14 +82,20 @@
         <?php
           if($user->isAdmin() && isset($_GET['opening'])) {
         ?> 
-            <li class="breadcrumb-item"><a href="/?profile">Profil utilisateur</a></li>
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
             <li class="breadcrumb-item active" aria-current="page">Horaire d'ouverture</li> 
             <?php
           } else if(isset($_GET['service'])) {
             ?> 
-            <li class="breadcrumb-item"><a href="/?profile">Profil utilisateur</a></li>
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
             <li class="breadcrumb-item active" aria-current="page">Service de réparation</li> 
             <?php
+          } else if(isset($_GET['new'])) {
+            ?> 
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nouvel véhicule</li> 
+            <?php
+          
           } else {
             ?> 
             <li class="breadcrumb-item active" aria-current="page">Profil utilisateur</li> 
@@ -101,9 +112,12 @@
         } else if(isset($_GET['service'])) {
           require("fragments/body/connected/admin/Service.php"); 
 
-        } else {
+        } else if(isset($_GET['new'])) {
           //cs=ko&si=tb -> creation status (ok, ko) - size image (tb : too big)
           require("fragments/body/connected/New.php");
+        
+        } else {
+          require("fragments/body/connected/Message.php");
         }
       
       ?>

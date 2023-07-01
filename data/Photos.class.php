@@ -20,6 +20,15 @@
                         FROM photo p;";
         }
         
+        public function create($chemin, $id_voiture) {
+            $queryExecutor = new QueryExecutor();
+            $sql = $this->generateQueryToCreateNewRecord($chemin);
+            $id_photo = $queryExecutor->insert($sql);
+
+            $sql = $this->generateQueryToJoinToRecord($id_voiture, $id_photo);
+            $queryExecutor->insert($sql);
+        }
+
         private function generateQueryToGetPhotoFromIdVehicle($id_voiture) {
             return "SELECT p.chemin
                     FROM photo p
@@ -30,6 +39,13 @@
                     WHERE v.id_voiture = $id_voiture";
         }
     
+        private function generateQueryToCreateNewRecord($chemin) {
+            return "INSERT INTO photo (id_photo, chemin) VALUES (NULL, '$chemin')";
+        }
+    
+        private function generateQueryToJoinToRecord($id_voiture, $id_photo) {
+            return "INSERT INTO voiture_photo (id_voiture, id_photo) VALUES ($id_voiture, $id_photo)";
+        }
     
     }
 ?>

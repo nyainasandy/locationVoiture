@@ -1,9 +1,9 @@
 <?php
     require_once("data/Brands.class.php");
     require_once("data/Warranties.class.php");
-    require_once("data/Energies.class.php");
+    require_once("data/Energies.class.php");    
     require_once("data/Fundings.class.php");
-
+    
     $brands = new Brands();
     $allBrands = $brands->findAll();
 
@@ -12,9 +12,11 @@
 
     $energies = new Energies();
     $allEnergies = $energies->findAll();
-
+    
     $fundings = new Fundings();
     $allFundings = $fundings->findAll();
+
+
 ?>
 
 <form method="POST" action="Create.php" enctype="multipart/form-data" class="p-5">
@@ -47,8 +49,4 @@
         </div>
     </div>
 
-    <div class="form-group text-end">
-        <button name="submit" type="submit" class="btn btn-primary btn-lg">Ajouter</button>
-    </div>
-    
 </form>

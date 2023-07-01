@@ -1,6 +1,7 @@
 <?php
     require_once("data/Connection.class.php");
 
+    $error_connection = null;
     if(isset($_POST['user'])) {
         $user = $_POST['user'];
         $password = $_POST['password'];
@@ -8,9 +9,8 @@
         $connection = new Connection();
         $user_to_check = $connection->findByUsernameAndPassword($user, $password);
 
-        if($user_to_check != null && count($user_to_check)) {
+        if($user_to_check != null && count($user_to_check) > 0 && !is_null($user_to_check[0]['nom_utilisateur'])) {
             
-            print_r($user_to_check[0]);
             $_SESSION["utilisateur"] = $user_to_check[0]['nom_utilisateur'];
             $_SESSION["nom"] = $user_to_check[0]['nom'];
             $_SESSION["prenom"] = $user_to_check[0]['prenom'];
@@ -18,11 +18,9 @@
 
             header('location:/?profile');
         } else {
-            header('location: /?login&connection=ko');
+            $error_connection = "Le couple utilisateur/mot de passe n'est pas valide !!";
         }
     }
-
-    $error_connection = isset($_GET['connection']) ? $_GET['connection'] : null;
     
 ?>
 <div class="row gradient">
@@ -43,7 +41,7 @@
                 </div>
 
                 <?php
-                    if($error_connection != null) {
+                    if(!is_null($error_connection)) {
                         ?>
                             <div class="text-danger">
                                 Le couple utilisateur/mot de passe incorrecte !!
