@@ -14,7 +14,10 @@
         $messageData->setMessage($_POST["message"]);
 
         $message->create($messageData);
-    } 
+       http_response_code(200);
 
-    header("location: /");
+    } else {
+        http_response_code(500);
+    }
+
 ?>

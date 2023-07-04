@@ -34,7 +34,7 @@
                     <div class="my-2">à partir de</div>
                     <div class="fw-bold fs-2"><?php echo $service["prix"] ?>&euro;00</div>
 
-                    <div class="mt-2"><button class="btn btn-warning">CONTACTEZ-NOUS</button></div>
+                    <div class="mt-2"><a class="btn btn-warning" href="/?contact">CONTACTEZ-NOUS</a></div>
 
                 </div>
 

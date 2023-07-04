@@ -14,11 +14,11 @@
             return $this->id;
         }
 
-        public function setAm($from, $to) {
-            if($from == '' || $to = '') {
+        public function setAm($fromAm, $toAm) {
+            if($fromAm == '' || $toAm == '') {
                 $this->am = null;
             } else {
-                $this->am = "$from - $to";
+                $this->am = "$fromAm - $toAm";
             }
         }
 
@@ -26,11 +26,11 @@
             return $this->am;
         }
 
-        public function setPm($from, $to) {
-            if($from == '' || $to = '') {
+        public function setPm($fromPm, $toPm) {
+            if($fromPm == '' || $toPm == '') {
                 $this->pm = null;
             } else {
-                $this->pm = "$from - $to";
+                $this->pm = "$fromPm - $toPm";
             }
         }
 

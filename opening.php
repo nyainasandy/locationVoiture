@@ -14,15 +14,16 @@
         $opening = new Opening();
         $openingData = new OpeningData();
 
+        echo "FROM AM($fromAm - $toAm) - PM($fromPm - $toPm)";
         $openingData->setId($id);
         $openingData->setAm($fromAm, $toAm);
         $openingData->setPm($fromPm, $toPm);
 
-        echo $opening->save($openingData);
+        $opening->save($openingData);
 
-        //http_response_code(200);
+        http_response_code(200);
     } else {
-        //http_response_code(500);
+        http_response_code(500);
     }
 
 ?>

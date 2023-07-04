@@ -43,17 +43,18 @@
 
                 <div class="p-5">
                         
-                    <form action="/SendMail.php" method="POST">
                         <h3 class="h3">FORMULAIRE DE CONTACT</h3>
                         <input id="username" name="username" type="text" class="form-control mb-3" placeholder="Votre nom" />
-                        <input id="telephone" name="telephone" type="tel" pattern="0[67][0-9]{8}" class="form-control mb-3" placeholder="Votre numéro de téléphone" />
+                        <input id="telephone" name="telephone" type="tel" pattern="0[1-9][0-9]{8}" class="form-control mb-3" placeholder="Votre numéro de téléphone" />
                         <input id="email" name="email" type="email" class="form-control mb-3" placeholder="Votredresse email" />
 
                         <textarea name="message" id="message" cols="30" rows="10" class="form-control mb-3" placeholder="Votre message"></textarea>
 
-                        <button class="btn btn-outline-success" type="submit">Nous faire parvenir</button>
-                    </form>
+                        <a class="btn btn-outline-success" id="send" href="javascript: sendMessage()">Nous faire parvenir</a>
 
+                        <div id="error" class="bg-danger ps-2 mt-2 text-white"></div>
+                        <div id="success" class="bg-success ps-2 mt-2 text-white"></div>
+                    
                 </div>
 
             </div>

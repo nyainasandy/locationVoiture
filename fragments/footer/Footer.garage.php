@@ -23,7 +23,11 @@
         <div class="col-2"><?php echo $allOpeningTime["jour"]; ?></div>
 
         <?php 
-            if(is_null($allOpeningTime["am"]) && is_null($allOpeningTime["pm"])) { ?>
+
+            $am = $allOpeningTime["am"];
+            $pm = $allOpeningTime["pm"];
+            
+            if((is_null($am) || $am == '') && (is_null($pm) || $pm == '')) { ?>
                 <div class="col-8">Fermé</div>
             <?php } else { ?>
                 <div class="col-4"><?php echo $allOpeningTime["am"] ?: 'Fermé'; ?></div>

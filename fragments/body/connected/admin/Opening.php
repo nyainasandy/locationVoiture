@@ -34,16 +34,16 @@
                 <th scope="row"><?php echo $allOpeningTime["id"]; ?></th>
                 <td><?php echo $allOpeningTime["jour"]; ?></td>
                 <td>
-                    <input name="morning_0" id="morning_0" placeholder="Heure d'ouverture de la matinée" type="time" class="form-control" value="<?php echo $hourlyAm[0]; ?>" />
+                    <input id="am_0_<?php echo $allOpeningTime['id']; ?>" placeholder="Heure d'ouverture de la matinée" type="time" class="form-control" value="<?php echo $hourlyAm[0]; ?>" />
                 </td>
                 <td>
-                    <input name="morning_1" id="morning_1" placeholder="Heure d'ouverture de la matinée" type="time" class="form-control" value="<?php echo $hourlyAm[1]; ?>" />
+                    <input id="am_1_<?php echo $allOpeningTime['id']; ?>" placeholder="Heure d'ouverture de la matinée" type="time" class="form-control" value="<?php echo $hourlyAm[1]; ?>" />
                 </td>
                 <td>
-                    <input name="afternoon_0" id="afternoon_0" placeholder="Heure d'ouverture de l'après-midi" type="time" class="form-control" value="<?php echo $hourlyPm[0]; ?>"/>
+                    <input id="pm_0_<?php echo $allOpeningTime['id']; ?>" placeholder="Heure d'ouverture de l'après-midi" type="time" class="form-control" value="<?php echo $hourlyPm[0]; ?>"/>
                 </td>
                 <td>
-                    <input name="afternoon_1" id="afternoon_1" placeholder="Heure d'ouverture de l'après-midi" type="time" class="form-control" value="<?php echo $hourlyPm[1]; ?>"/>
+                    <input id="pm_1_<?php echo $allOpeningTime['id']; ?>" placeholder="Heure d'ouverture de l'après-midi" type="time" class="form-control" value="<?php echo $hourlyPm[1]; ?>"/>
                 </td>
                 <td class="text-center">
                     <a href="javascript: saveOpeningChange(<?php echo $allOpeningTime['id']; ?>)" class="btn p-0 m-0 text-dark">
