@@ -170,15 +170,30 @@ function updateService(id) {
     });
 }
 
-function addService() {
-    
-    console.table($("tr#new > td > input#new_label"));
-    console.table($("tr#new > td > input#new_price"));
-    console.table($("tr#" + id + " > td > input#price.form-control"));
 
-    var label = $("tr#new > td > input#new_label").val();
-    var price = $("tr#new > td > input#new_price").val();
+function createService() {
     
-    $("table#services > tbody").append();
+    var label = $("table#services > tfoot > tr > td > input#label").val();
+    var price = $("table#services > tfoot > tr > td > input#price").val();
 
+    console.log("Label : " + label + " - with price : " + price);
+    
+    $.post('/addService.php', 
+    { 
+        label: label,
+        price: price
+    })
+    .done(function(service_id) {
+        $('#success').html("Le service a été ajouté avec succès !!");
+        
+        $.ajax( "/service.item.php?id=" + service_id + "&nom=" + label + "&prix=" + price)
+        .done(function(data) {
+            $('table#services > tbody > tr:last').after(data);
+            $("table#services > tfoot > tr > td > input#label").val("");
+            $("table#services > tfoot > tr > td > input#price").val("");
+        });
+    })
+    .fail(function(xhr, status, error) {
+        $('#error').html("Une erreur inattendue est survenue lors de l'ajout du nouveau service (id : " + id + ") !! (status : " + status + ") " + error);
+    });
 }

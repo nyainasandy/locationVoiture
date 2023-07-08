@@ -24,51 +24,27 @@
             </thead>
             <tbody>
 
-                <?php foreach($allServices as $service) { ?>
-                <tr id="<?php echo $service["id_service"]; ?>">
-                    <th scope="row">
-                        <?php echo $service["id_service"]; ?>
-                    </th>
-                    <td>
-                        <input type="text" value="<?php echo $service["nom"]; ?>" id="label" class="form-control" />
-                    </td>
-                    <td>
-                        <input type="number" value="<?php echo $service["prix"]; ?>" id="price" class="form-control" />
-                    </td>
-                    <td class="text-center">
-                        <a id="save" 
-                            href="javascript: updateService(<?php echo $service["id_service"]; ?>)" 
-                            class="btn p-0 m-0 text-dark">
-                            <i class="fa-regular fa-floppy-disk fa-2x"></i>
-                        </a>
-                        <button id="delete" 
-                                class="btn p-0 m-0 text-dark" 
-                                data-service-id="<?php echo $service["id_service"]; ?>" 
-                                data-service-label="<?php echo $service["nom"]; ?>" 
-                                data-service-price="<?php echo $service["prix"]; ?>" 
-                                data-bs-toggle="modal" 
-                                data-bs-target="#deleteModalConfirmation">
-                            <i class="fa-regular fa-trash-can fa-2x"></i>
-                        </button>
-                    </td>
-                </tr>
-                <?php } ?>
+                <?php 
+                foreach($allServices as $service) {
+                    require("service.item.php");    
+                } 
+                ?>
 
             </tbody>
-            <tfooter>
-                <tr id="new">
+            <tfoot>
+                <tr>
                     <td>#</td>
                     <td>
-                        <input type="text" placeholder="Nom du service" id="new_label" class="form-control" />
+                        <input type="text" placeholder="Nom" id="label" class="form-control" />
                     </td>
                     <td>
-                        <input type="number" id="new_price" placeholder="Prix" class="form-control" />
+                        <input type="text" placeholder="Prix" id="price" class="form-control" />
                     </td>
                     <td class="text-center">
-                        <a class="btn btn-success" href="addService()">Add</a>
+                        <a class="btn btn-success" href="javascript: createService()">Add</a>
                     </td>
                 </tr>
-            </tfooter>
+            </tfoot>
         </table>
 
         <div id="success" class="text-white bg-success ps-2 mt-2"></div>
