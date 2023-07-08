@@ -62,7 +62,7 @@
                     
                     <div class='row my-3 px-2'>
                         <div class='col-lg-8'>
-                            <div class='type'>Certified used 2021</div>
+                            <div class='type'>Occasion</div>
                             <div class='label'><?php echo $voiture['nom']." ".$voiture['model']; ?></div>
                         </div>
                         <div class='col-lg-4 text-end py-2 px-2'>

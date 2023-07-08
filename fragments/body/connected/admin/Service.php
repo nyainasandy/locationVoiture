@@ -13,7 +13,7 @@
     <div class="mb-5">Vous pouvez modifier le service proposé.</div>
 
     <div class="w-75">
-        <table class="table">
+        <table class="table" id="services">
             <thead>
                 <tr>
                 <th scope="col">#</th>
@@ -56,16 +56,16 @@
 
             </tbody>
             <tfooter>
-                <tr>
+                <tr id="new">
                     <td>#</td>
                     <td>
-                        <input type="text" value="Nom" id="label" class="form-control" />
+                        <input type="text" placeholder="Nom du service" id="new_label" class="form-control" />
                     </td>
                     <td>
-                        <input type="text" value="Prix" id="label" class="form-control" />
+                        <input type="number" id="new_price" placeholder="Prix" class="form-control" />
                     </td>
                     <td class="text-center">
-                        <button class="btn btn-success">Add</button>
+                        <a class="btn btn-success" href="addService()">Add</a>
                     </td>
                 </tr>
             </tfooter>

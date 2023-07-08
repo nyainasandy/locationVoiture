@@ -169,3 +169,16 @@ function updateService(id) {
         $('#error').html("Une erreur inattendue est survenue lors de la suppression du service (id : " + id + ") !! (status : " + status + ") " + error);
     });
 }
+
+function addService() {
+    
+    console.table($("tr#new > td > input#new_label"));
+    console.table($("tr#new > td > input#new_price"));
+    console.table($("tr#" + id + " > td > input#price.form-control"));
+
+    var label = $("tr#new > td > input#new_label").val();
+    var price = $("tr#new > td > input#new_price").val();
+    
+    $("table#services > tbody").append();
+
+}

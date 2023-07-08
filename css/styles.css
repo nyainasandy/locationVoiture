@@ -91,16 +91,20 @@
   'opsz' 48
 }
 
+.img-logo > img {
+    filter: drop-shadow(2px 2px var(--orange-color));
+}
+
 .logo {
     font-family: 'Bicro', sans-serif;
-    font-size: 100px;
+    font-size: 50px;
     font-weight: 500;
     color: var(--gold);
     text-shadow: 2px 2px var(--orange-color);
     filter: brightness(1.75);
 }
 
-.logo + div {
+.logo + p {
     font-family: sans-serif;
     font-size: 24px;
     text-shadow: 2px 2px gray;
