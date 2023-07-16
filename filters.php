@@ -61,11 +61,11 @@
                     ?>
                     
                     <div class='row my-3 px-2'>
-                        <div class='col-lg-8'>
+                        <div class='col-lg-6'>
                             <div class='type'>Occasion</div>
                             <div class='label'><?php echo $voiture['nom']." ".$voiture['model']; ?></div>
                         </div>
-                        <div class='col-lg-4 text-end py-2 px-2'>
+                        <div class='col-lg-6 text-end py-2 px-2'>
                             <span class='p-2 bg-orange text-white fw-bold'>
                                 &euro; <?php echo number_format($voiture['prix'], 2, ',', ' '); ?>
                             </span>
@@ -74,29 +74,29 @@
 
 
                     <div class='row mt-1'>
-                        <div class='col-lg-4'>
+                        <div class='col-4'>
                             Année 
                         </div>
-                        <div class='col-lg-8 ps-2'>
-                            <?php $voiture['annee']; ?>
+                        <div class='col-8 ps-2'>
+                            <?php echo $voiture['annee']; ?>
                         </div>
                     </div>
 
 
                     <div class='row mt-1'>
-                        <div class='col-lg-4'>
+                        <div class='col-4'>
                             Carburant
                         </div>
-                        <div class='col-lg-8 ps-2'>
+                        <div class='col-8 ps-2'>
                             <?php echo $voiture['energie']; ?>
                         </div>
                     </div>
 
                     <div class='row mt-1'>
-                        <div class='col-lg-4'>
+                        <div class='col-4'>
                             Kilometrage
                         </div>
-                        <div class='col-lg-8 ps-2'>
+                        <div class='col-8 ps-2'>
                             <?php echo number_format($voiture['kilometrage'], 0, ',', ' '); ?>
                         </div>
                     </div>

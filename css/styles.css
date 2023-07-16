@@ -7,7 +7,7 @@
     --orange-color: #ff5602;
     --night-blue-color: #153e4d;
     --violet-color: #6451CE;
-    --gray-light: rgb(230, 227, 227);
+    --gray-light: #e6e3e3;
     --gold: #ffd700;
 
     --black: #1E0F1C;
@@ -53,7 +53,7 @@
 }
 
 .label {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 22px;
     overflow: hidden;
 }
@@ -175,8 +175,8 @@ ul.list-arrow > li > a:hover {
 }
 
 .apercu {
-    width: 408px; 
-    height: 306px; 
+    width: 298px; 
+    height: 206px; 
     object-fit: cover;
 }
 
@@ -224,10 +224,20 @@ img.side {
     object-position: center;
 }
 
-.gradient {
-    background: rgb(209,208,208);
-    background: linear-gradient(90deg, #d1d0d0 0%, #f2f1f1 43%, #ffffff 100%);
+@media (max-device-width:576px), (max-width: 576px) {
+    .gradient {
+        background: rgb(209,208,208);
+        background: linear-gradient(90deg, #d1d0d0 0%, #f2f1f1 43%, #ffffff 100%);
+    }
 }
+
+@media (min-width: 577px) {
+    .gradient {
+        background: rgb(209,208,208);
+        background: linear-gradient(0deg, #d1d0d0 0%, #f2f1f1 23%, #ffffff 100%);
+    }
+}
+
 
 .nav-left {
     background-color: var(--black);

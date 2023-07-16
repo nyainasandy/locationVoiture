@@ -11,7 +11,7 @@
 
         <div class="row mt-2">
             
-            <div class="col-lg-8"> 
+            <div class="col-8"> 
             <?php
             for($i=0;$i<$number_photo;$i++) {?>
                 <img src="<?php echo $allPhotos[$i]["chemin"]; ?>" alt="" class="me-2 miniature" onclick="javascript: loadImage(this.src)" />
@@ -19,11 +19,11 @@
             } 
             ?>
             </div>
-            <div class="col-lg-4 d-flex flex-row-reverse mt-4">
-                <div class="btn-group h-50 pe-4" role="group">
-                    <a class="btn btn-outline-secondary"><i class="fa fa-share-nodes pt-1"></i></a>
-                    <a class="btn btn-outline-secondary"><i class="fa fa-bell pt-1"></i></a>
-                    <a class="btn btn-outline-secondary"><i class="fa fa-heart pt-1"></i></a>
+            <div class="col-4 d-flex flex-row-reverse mt-4">
+                <div class="btn-group pe-4" role="group">
+                    <a class="btn"><i class="fa fa-share-nodes pt-1"></i></a>
+                    <a class="btn"><i class="fa fa-bell pt-1"></i></a>
+                    <a class="btn"><i class="fa fa-heart pt-1"></i></a>
                 </div>
             </div>
         </div>

@@ -34,8 +34,11 @@
         <?php require("view/Description.php"); ?>
     </div>
     
-    <div class="col-lg-2 pt-5 text-end me-1">
-        <img src="/images/pub-audi.png" alt="" />
+    <div class="col-lg-2 pt-5 text-center me-1">
+        <div class="d-sm-none">
+            <img src="/images/pub-audi.png" alt="" />
+        </div>
+        
     </div>
 </div>
 
@@ -47,7 +50,7 @@
         ?>
     </div>
     
-    <div class="col-lg-2 pt-5 text-end me-1">
+    <div class="col-lg-2 pt-5 text-center d-none d-sm-block me-1">
         <img src="/images/pub-toyota.png" alt="" />
     </div>
 </div>

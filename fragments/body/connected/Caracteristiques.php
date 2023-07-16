@@ -1,5 +1,5 @@
 <div class="form-group mb-3 mt-5 row px-3">
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="marque">Marque</label> 
         <div>
             <select id="marque" name="marque" class="form-select">
@@ -12,30 +12,30 @@
         </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="modele">Modèle</label> 
         <input id="modele" name="modele" placeholder="Modèle du véhicule" type="text" class="form-control" />
     </div>
 </div>
 
 <div class="form-group mb-3 row px-3">
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="annee">Année</label> 
         <input id="annee" name="annee" placeholder="Année de sortie" type="number" min="1900" max="2099" class="form-control" />
     </div>
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="mise_en_circulation">Mise en circulation</label> 
         <input id="mise_en_circulation" name="mise_en_circulation" placeholder="La date de la première mise en circulation" type="date" value="2023-06-05" class="form-control" />
     </div>
 </div>
 
 <div class="form-group mb-3 row px-3">
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="nombre_porte">Nombre de porte</label> 
         <input id="nombre_porte" name="nombre_porte" placeholder="Combien de porte sur le vehicule ?" type="number" class="form-control" />
     </div>
 
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="nombre_place">Nombre de place</label> 
         <input id="nombre_place" name="nombre_place" placeholder="Combien de personnes peuvent s'installer ?" type="number" class="form-control" />
     </div>
@@ -43,12 +43,12 @@
 </div>
 
 <div class="form-group mb-3 row px-3">
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="puissance_fiscale">Puissance fiscale</label> 
         <input id="puissance_fiscale" name="puissance_fiscale" placeholder="Sa puissance fiscale" type="number" class="form-control" />
     </div>
 
-    <div class="col-6">
+    <div class="col-lg-6">
         <label for="puissance">Puissance</label> 
         <input id="puissance" name="puissance" placeholder="Sa puissance" type="number" class="form-control" />
     </div>
@@ -56,7 +56,7 @@
 
 <div class="row px-3">
 
-    <div class="col-6">
+    <div class="col-lg-6">
         
         <div class="form-group mb-3">
             <label for="kilometrage">Kilométrage</label> 

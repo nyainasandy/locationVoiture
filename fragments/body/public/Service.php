@@ -43,7 +43,7 @@
         
     </div>
 
-    <div class="col-lg-3">
+    <div class="col-lg-3 text-center">
         <img src="images/pub-audi.png" alt="" class="img-fluid" />
     </div>
 

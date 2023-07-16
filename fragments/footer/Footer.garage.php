@@ -19,7 +19,7 @@
     $allOpeningTimes = $opening->findAll();
     foreach($allOpeningTimes as $allOpeningTime) {
 ?>
-    <div class="row ms-2">
+    <div class="row ms-2 mb-2">
         <div class="col-2"><?php echo $allOpeningTime["jour"]; ?></div>
 
         <?php 

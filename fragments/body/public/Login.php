@@ -24,11 +24,14 @@
     
 ?>
 <div class="row gradient">
-    <div class="col-sm-6 text-black">
+    <div class="col-lg-6 px-0">
+        <img src="/images/evoque.png" alt="Login image" class="img-fluid text-center" />
+    </div>
+    <div class="col-lg-6 text-black">
 
-        <div class="d-flex align-items-center h-75 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+        <div class="h-75 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-            <form style="width: 23rem;" class="pt-5 pe-5 border-end" method="POST" action="/?login">
+            <form class="pt-5 pe-5" method="POST" action="/?login">
 
                 <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Se connecter</h3>
 
@@ -64,8 +67,5 @@
 
         </div>
 
-    </div>
-    <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="/images/evoque.png" alt="Login image" class="w-100 vh-50 side" />
     </div>
 </div>

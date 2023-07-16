@@ -14,7 +14,7 @@
     } 
 ?>
 <div class="row <?php echo $background.' '.$color; ?> me-0">
-  <div class="col-lg-6 p-2 mt-1">
+  <div class="col-6 p-2 mt-1">
     
     <div class="row ps-2">
       <div class="col-4">
@@ -25,7 +25,7 @@
     
   </div>
   
-  <div class="col-lg-6 text-right d-flex flex-row-reverse p-2"> 
+  <div class="col-6 text-right d-flex flex-row-reverse p-2"> 
     <a class="btn <?php echo $color; ?>" href="/logout.php"><i class="fa fa-lock"></i></a>
     <a class="btn <?php echo $color; ?>" href="/?profile"><i class="fa fa-envelope"></i></a>
   </div>
@@ -82,23 +82,23 @@
         <?php
           if($user->isAdmin() && isset($_GET['opening'])) {
         ?> 
-            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none ms-2">Profil utilisateur</a></li>
             <li class="breadcrumb-item active" aria-current="page">Horaire d'ouverture</li> 
             <?php
           } else if(isset($_GET['service'])) {
             ?> 
-            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none ms-2">Profil utilisateur</a></li>
             <li class="breadcrumb-item active" aria-current="page">Service de réparation</li> 
             <?php
           } else if(isset($_GET['new'])) {
             ?> 
-            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none">Profil utilisateur</a></li>
+            <li class="breadcrumb-item"><a href="/?profile" class="text-decoration-none ms-2">Profil utilisateur</a></li>
             <li class="breadcrumb-item active" aria-current="page">Nouvel véhicule</li> 
             <?php
           
           } else {
             ?> 
-            <li class="breadcrumb-item active" aria-current="page">Profil utilisateur</li> 
+            <li class="breadcrumb-item active ms-2" aria-current="page">Profil utilisateur</li> 
             <?php
           }
         ?>

@@ -5,7 +5,7 @@
     <div class="row">
 
         <!-- marque -->
-        <div class="col-lg-4 border-end border-bottom p-3">
+        <div class="col-4 border-end border-bottom p-3">
             
             <div class="row d-flex align-items-center">
 
@@ -21,7 +21,7 @@
         </div>
         
         <!-- Modèle -->
-        <div class="col-lg-4 border-end border-bottom p-3">
+        <div class="col-4 border-end border-bottom p-3">
             
             <div class="row d-flex align-items-center">
 
@@ -37,7 +37,7 @@
         </div>
         
         <!-- année de sortie -->
-        <div class="col-lg-4 border-bottom p-3">
+        <div class="col-4 border-bottom p-3">
             
             <div class="row d-flex align-items-center">
 
@@ -56,7 +56,7 @@
     <div class="row">
 
         <!-- mise en circulation -->
-        <div class="col-lg-4 p-3 border-end border-bottom">
+        <div class="col-4 p-3 border-end border-bottom">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -71,7 +71,7 @@
         </div>
 
         <!-- kilométrage -->
-        <div class="col-lg-4 border-end border-bottom p-3">
+        <div class="col-4 border-end border-bottom p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -86,7 +86,7 @@
         </div>
 
         <!-- carburant -->
-        <div class="col-lg-4 border-bottom p-3">
+        <div class="col-4 border-bottom p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -103,7 +103,7 @@
 
     <div class="row">
         <!-- boite de vitess -->
-        <div class="col-lg-4 p-3 border-bottom border-end">
+        <div class="col-4 p-3 border-bottom border-end">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -118,7 +118,7 @@
         </div>
 
         <!-- couleur-->
-        <div class="col-lg-4 border-bottom border-end p-3">
+        <div class="col-4 border-bottom border-end p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -133,7 +133,7 @@
         </div>
 
         <!-- nombre de porte -->
-        <div class="col-lg-4  border-bottom p-3">
+        <div class="col-4  border-bottom p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -150,7 +150,7 @@
 
     <div class="row">
         <!-- nombre de place-->
-        <div class="col-lg-4 p-3 border-end">
+        <div class="col-4 p-3 border-end">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -165,7 +165,7 @@
         </div>
 
         <!-- puissance fiscale-->
-        <div class="col-lg-4 border-end p-3">
+        <div class="col-4 border-end p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">
@@ -180,7 +180,7 @@
         </div>
 
         <!-- puissance -->
-        <div class="col-lg-4 p-3">
+        <div class="col-4 p-3">
             
             <div class="row d-flex align-items-center">
                 <div class="col-lg-3">

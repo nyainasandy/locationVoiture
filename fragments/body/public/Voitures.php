@@ -1,7 +1,11 @@
 <?php
     require_once("data/Voitures.class.php");
+    require_once("data/Service.class.php");
 
     $voitures = new Voitures();
+
+    $services = new Service();
+    $allServices = $services->findAll();
 
     $marque = null;
     $allVoitures = null;
@@ -63,14 +67,35 @@
     </div>
 
     <div class='row p-3'>
-        <div class="offset-sm-6 col-lg-6 d-flex flex-row-reverse">
+        <div class="d-flex flex-row-reverse">
             <button class="btn btn-danger" onclick="resetFilter()">Supprimer filtre</button>
         </div>
     </div>
     
 </div>
 
-<div id="vehicles">
-    <?php require("filters.php"); ?>
+<div class="row">
+    <div class="col-lg-9" id="vehicles">
+        <?php require("filters.php"); ?>
+    </div>
+    <div class="col-lg-3 mt-5">
+        <div class="bg-yellow p-3 border border-warning">
+            <div class="fw-bold border-bottom border-warning pb-3 mb-3">Les services proposés</div>
+        
+            <?php 
+            foreach($allServices as $service) {
+                echo "<div class='mb-2 ms-2 row'><div class='col-9'>".$service["nom"]."</div><div class='col-3'>".$service["prix"]."&euro;</div></div>";
+            }
+            ?>
+
+            <div class="mt-3">
+                <a class="btn btn-outline-success" href="/?service">Plus de détail >></a>
+            </div>
+
+        </div>
+        
+        <div class="mt-5 text-center"><img src="images/Pub-toyota.png" alt=""/></div>
+        
+    </div>
 </div>
 
